@@ -94,10 +94,12 @@ jobs:
         working-directory: /home/runner/frappe-bench
         run: |
           bench get-app --branch v16.23.0 erpnext https://github.com/frappe/erpnext
+          bench get-app --branch main custom_filters https://github.com/yueweiit/deeplinkerp-custom_filters.git
           bench get-app client_akivision $GITHUB_WORKSPACE
           bench setup requirements --dev
           bench new-site --db-root-password root --admin-password admin test_site
           bench --site test_site install-app erpnext
+          bench --site test_site install-app custom_filters
           bench --site test_site install-app client_akivision
           bench build
         env:
