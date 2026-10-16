@@ -2,13 +2,15 @@
 
 akivision
 
+独立仓库为 [yueweiit/deeplinkerp-client_akivision](https://github.com/yueweiit/deeplinkerp-client_akivision)，开发主线和 PR 目标均为 `main`。Frappe App 名保持 `client_akivision`。
+
 ### Installation
 
 You can install this app using the [bench](https://github.com/frappe/bench) CLI:
 
 ```bash
 cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch main
+bench get-app --branch main client_akivision https://github.com/yueweiit/deeplinkerp-client_akivision.git
 bench install-app client_akivision
 ```
 
@@ -31,7 +33,7 @@ Pre-commit is configured to use the following tools for checking and formatting 
 
 This app can use GitHub Actions for CI. The following workflows are configured:
 
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
+- CI：在推送到 `main` 和创建 PR 时安装应用并运行测试。
 - Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
 
 
